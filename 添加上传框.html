@@ -1,0 +1,74 @@
+<html>
+	<head>
+	
+	</head>
+	
+	<body>
+		
+		<input type="file" name="f[]" />  <input type="button" value="添加" /><br />
+		
+		<div id="more"></div>
+		
+		<script>
+			window.onload = function(){
+				var oInp = document.getElementsByTagName('input');
+				oInp[1].onclick = function(){
+					
+					var oNewInp = document.createElement('input');
+					var oSpan = document.createElement('a');
+					//var oBr = document.createElement('br');
+					//因为div这个元素是行标签，因此，br不用再分配过去了
+					var oDiv = document.createElement('div');
+					
+					oSpan.innerText = '删除';
+					oSpan.onclick = function(){
+						var myParent = this.parentNode;
+						var more = document.getElementById('more');
+						more.removeChild(myParent);
+					}
+					
+					//oNewInp.type = 'file';
+					oNewInp.setAttribute('type','file');
+					oNewInp.name = 'f[]';
+					
+					
+					// input file 插入至oDiv中
+					// a 插入至oDiv中
+					oDiv.appendChild(oNewInp);
+					oDiv.appendChild(oSpan);
+					
+					
+					//再将 oDiv插至more中
+					
+					var more = document.getElementById('more');
+					more.appendChild(oDiv);
+					//more.appendChild(oNewInp);
+					//more.appendChild(oSpan);
+					//more.appendChild(oBr);
+					
+				}
+				
+				
+			
+			}
+			
+			/*
+			function del(obj)
+			{
+					
+					alert(obj);
+					
+					
+					
+					var more = document.getElementById('more');
+					
+				
+			}
+			*/
+		
+		</script>
+		
+	
+	</body>
+
+</html>

@@ -1,0 +1,55 @@
+<html>
+	<head>
+	
+	</head>
+	
+	<body>
+		
+		<input type="text" name="phone" /><input type="button" value="发送短信" />
+		
+		<script>
+			
+			var oButton = document.getElementsByTagName('input');
+			var sec = 10;
+			var timer = null;
+			
+			//做一个标记量，如果户没有点击的时候，标记变量为1
+			//如果用户点击了，标记变量设为0
+			//如果到了0秒的候，将标记变量再次设为1，即又可以重新点了
+			//相当于上厕所，还有去住酒店的时候，请勿打扰
+			var flag = 1;
+			
+			
+			oButton[1].onclick = function(){
+			
+				if (flag == 1) {
+					flag = 0;
+					var _this = this;
+					
+					timer = setInterval(function(){
+						sec--;
+						
+						//console.log(sec);
+						_this.value = sec + '后可重新发送';
+						
+						if (sec <= 0) {
+							_this.value = '再次发送';
+							flag = 1;
+							sec = 10;
+							clearInterval(timer);
+							
+						}
+						
+						
+					},1000);
+				}
+			
+			}
+		
+		
+		</script>
+		
+	
+	</body>
+
+</html>

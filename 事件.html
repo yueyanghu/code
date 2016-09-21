@@ -1,0 +1,30 @@
+<html>
+	<head>
+	
+	</head>
+	
+	
+	<body>
+		
+		<div id="dis"></div>
+	
+	</body>
+	
+	<script>
+		window.onload = function()
+		{
+			
+			document.onmousemove = function(ev)
+			{
+				var e = ev || event;
+				
+				var dis = document.getElementById('dis');
+				
+				dis.innerHTML = 'x'+ e.clientX + '--------y'+e.clientY;
+			}
+		
+		}
+	
+	</script>
+
+</html>

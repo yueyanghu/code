@@ -1,0 +1,90 @@
+<html>
+	<head>
+	
+	</head>
+	
+	<body>
+	
+		
+		<div>
+			狗怎么叫，汪汪
+			猫怎么叫，miao
+			猪怎么叫，嗯嗯
+			鸡怎么叫，大爷进来玩玩吧
+		</div>
+		
+		<script>
+			//click,dblclick,scroll
+			
+			var div = document.getElementsByTagName('div');
+			
+			addEvent(div[0],'click',demo);
+			
+			addEvent(div[0],'click',show);
+			
+			removeEvent(div[0],'click',show);
+			
+			
+			
+			function demo(){
+				alert(111);
+			}
+			
+			function show(){
+				alert(222);
+			}
+			
+			
+			function addEvent(obj,sEv,fn)
+			{
+				if (obj.addEventListener) {
+					//事件click,函数，事件冒泡，不冒泡
+					obj.addEventListener(sEv,fn,false);
+					
+				} else {
+					obj.attachEvent('on'+sEv,fn);
+				}
+			
+			}
+			
+			
+			function removeEvent(obj,sEv,fn)
+			{
+				if (obj.removeEventListener) {
+					obj.removeEventListener(sEv,fn,false);
+				} else {
+				
+					obj.detachEvent('on'+sEv,fn);
+				}
+
+			}
+			
+			
+			/*
+			var div = document.getElementsByTagName('div');
+			
+			div[0].onclick = function()
+			{
+				alert(111);
+			}
+			
+			div[0].onclick = function()
+			{
+				alert(222);
+			}
+			
+			
+			
+			function demo()
+			{
+				alert(111);
+			}
+			*/
+			
+		
+		</script>
+		
+	
+	</body>
+
+</html>

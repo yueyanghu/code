@@ -1,0 +1,43 @@
+<html>
+	<head>
+		<style>
+			div{
+				width:200px;
+				height:200px;
+				background:pink;
+			}
+		</style>
+		
+	
+	
+	</head>
+	
+	<body  onclick="demo()">
+	
+		<div onclick="test()">
+			´óÒ¯½øÀ´Íæ°¡	
+		</div>
+	
+		<script>
+			function demo()
+			{
+			
+				alert(111);
+				
+			}
+			
+			function test(ev)
+			{
+				var oEvent = ev || event;
+				
+				oEvent.cancelBubble = true;
+			
+				alert(222);
+			}
+		
+		</script>
+	
+	
+	</body>
+
+</html>

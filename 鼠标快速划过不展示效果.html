@@ -1,0 +1,86 @@
+<html>
+	<head>
+			
+		<style>
+			li {float:left;width:100px;height:30px;background:pink;list-style:none;margin-left:10px;}
+		
+			div {
+				width:300px;
+				height:300px;
+				background:green;
+				clear:both;
+				display:none;
+			}
+		</style>
+		
+	</head>
+	
+	
+	<body>
+		
+		<li>科技</li>
+		
+		<li>军事</li>
+		
+		<div>科技</div>
+		
+		<div>显示军事</div>
+		
+		<script>
+			
+			//选项卡，快速划过没反映
+			//鼠标放到上面的时候，设置 一个一次性计时器对象
+			//鼠标离开的候，清空计时器对象
+			//
+			// _this = this  (其实是将当前对象赋值给了一个变量) _this换为obj这样的他变量名也可以
+			
+			// setInterval使用的时候，你要清楚你绑定的对象是谁。
+			
+			
+			
+			var li = document.getElementsByTagName('li');
+			var div = document.getElementsByTagName('div');
+			var timer = null;
+			
+			for (var i = 0; i < li.length; i++) {
+				li[i].index = i;
+				
+				li[i].onmouseover = function() {
+					for (var j = 0; j < li.length; j++) {
+						div[j].style.display = 'none';
+					}
+					
+					obj = this;
+					
+					
+					
+					timer = setTimeout(function(){
+						
+						div[obj.index].style.display = 'block';
+					},300)
+				}
+			
+			}
+			
+			
+			for (var i = 0; i < li.length; i++) {
+				li[i].index = i;
+				
+				li[i].onmouseout = function() {
+					for (var j = 0; j < li.lenght; j++) {
+						div[j].style.display = 'none';
+					}
+					
+					clearTimeout(timer);
+					
+					div[this.index].style.display = 'none';
+				}
+			
+			}
+		
+		</script>
+	
+	
+	</body>
+
+</html>
