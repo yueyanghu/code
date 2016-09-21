@@ -1,0 +1,27 @@
+<html>
+
+	<head>
+	
+	</head>
+	
+	<body>
+	
+		<button onclick="stop()">我一点击，之后第五秒的时候就不弹出</button>
+		
+		<script>
+			
+			var timer = setTimeout(function(){
+				alert('我爱你，爱着你就像老鼠爱大米，一口一口咬死你');
+			},5000);
+			
+			function stop()
+			{
+				clearTimeout(timer);
+				//alert('你调了我哟');
+			}
+			
+		
+		</script>
+	
+	</body>
+</html>
