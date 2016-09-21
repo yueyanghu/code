@@ -1,0 +1,44 @@
+<html>
+	<head>
+	
+	</head>
+	
+	<body>
+		
+		<h1 id="ti" style="text-align:center;width:100%;font-size:100px;" onmouseover="jiasu()" onmouseout="stop()">0</h1>
+		
+		<script>
+		//声明的timer是全局的
+		var timer;
+		var i = 0;
+		
+		function jiasu()
+		{
+			
+			
+			//将定时器对象赋值给全局的变量timer
+			timer = setInterval(function(){
+				var ti = document.getElementById('ti');
+				
+				i++;
+				
+				ti.innerHTML = i;
+				
+				
+			}, 1000);
+		
+		}
+		
+		function stop()
+		{
+			//清空掉记时器对象
+			clearInterval(timer);
+		
+		}
+		
+		
+		</script>
+	</body>
+
+
+</html>
